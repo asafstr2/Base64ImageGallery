@@ -1,0 +1,29 @@
+{
+  "name": "bthere",
+  "version": "1.0.0",
+  "description": "taking a base 64 photo and presenting in a gallery  need to make a .env file wit the following :",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asafstr2/Base64ImageGallery.git"
+  },
+  "author": "Asaf strilitz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asafstr2/Base64ImageGallery/issues"
+  },
+  "homepage": "https://github.com/asafstr2/Base64ImageGallery#readme",
+  "dependencies": {
+    "aws-sdk": "^2.608.0",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "mysql": "^2.18.0"
+  }
+}

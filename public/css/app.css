@@ -1,0 +1,175 @@
+/*
+
+All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 77). 
+        
+The 'supports' rule will only run if your browser supports CSS grid.
+
+Flexbox is used as a fallback so that browsers which don't support grid will still recieve an identical layout.
+
+*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500);
+
+:root {
+    /* Base font size */
+    font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: #131417;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.container {
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+}
+
+.heading {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    padding: 3.5rem 0;
+    color: #1a1a1a;
+}
+
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    /* Compensate for excess margin on outer gallery flex items */
+    margin: -1rem -1rem;
+}
+
+.gallery-item {
+    /* Minimum width of 24rem and grow to fit available space */
+    flex: 1 0 24rem;
+    /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+    margin: 1rem;
+    box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    background-color: #fafafa;
+    border-radius: 25px;
+}
+
+.gallery-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+    transform: scale(1.15);
+}
+
+div.desc {
+    font-size: 1.2rem;
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+
+.form {
+    width: 400px;
+    height: auto;
+    margin: auto;
+    border-radius: 5px;
+    padding: 20px;
+
+}
+
+div.form-item {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+
+input {
+    transition: all .2s ease;
+}
+
+input.form-style {
+    color: #8a8a8a;
+    display: block;
+    width: 90%;
+    height: 44px;
+    padding: 5px 5%;
+    border: 1px solid #ccc;
+    border-radius: 27px;
+    background-clip: padding-box;
+    background-color: #fff;
+    font-family: 'HelveticaNeue', 'Arial', sans-serif;
+    font-size: 105%;
+    letter-spacing: .8px;
+}
+
+div.form-item .form-style:focus {
+    outline: none;
+    border: 1px solid #58bff6;
+    color: #58bff6;
+}
+
+input[type="submit"].login {
+    float: right;
+    width: 112px;
+    height: 37px;
+    border-radius: 19px;
+    background-clip: padding-box;
+    background-color: #55b1df;
+    border: 1px solid #55b1df;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+input[type="submit"].login:hover {
+    background-color: #fff;
+    border: 1px solid #55b1df;
+    color: #55b1df;
+    cursor: pointer;
+}
+
+input[type="submit"].login:focus {
+    outline: none;
+}
+
+
+
+
+
+
+/*
+
+The following rule will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
+
+*/
+@supports (display: grid) {
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+        grid-gap: 2rem;
+    }
+
+    .gallery,
+    .gallery-item {
+        margin: 0;
+    }
+}

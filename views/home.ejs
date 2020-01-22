@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="/css/app.css">
+
+
+<div class="container">
+    <h1 class="heading">Base 64 Image Gallery</h1>
+
+    <div class="form">
+        <form method="POST" action='/newImage'>
+            <fieldset>
+                <div class="form-item">
+                    <input type="text" name="photo" class="form" placeholder="Enter Your Image">
+
+                </div>
+                <div class="form-item">
+                    <input type="text" name="description" class="form" placeholder="Enter Your description">
+                </div>
+                <input type="submit" class="login pull-right" value="Submit">
+            </fieldset>
+        </form>
+    </div>
+
+
+
+    <div class="gallery">
+        <% url.forEach((photo)=> { %>
+        <div class="gallery-item">
+            <img class="gallery-image" src="<%= photo.url%>" alt="just alt">
+            <div class="desc"><%= photo.description %></div>
+
+        </div>
+        <% }); %>
+
+    </div>
+
+</div>
